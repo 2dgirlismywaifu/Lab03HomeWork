@@ -7,7 +7,7 @@ namespace bai10
 {
     internal class bai10
     {
-        abstract class Person
+        class Person
         {
             public string Name; //Họ và tên
             public string Address; //Địa chỉ
@@ -36,7 +36,12 @@ namespace bai10
                 return Address;
             }
 
-            public abstract void Display();
+            public void Display(string title)
+            {
+                Console.WriteLine("=========Thong tin " + title + "=========");
+                Console.WriteLine("Ho va ten: " + this.Name);
+                Console.WriteLine("Dia chi: " + this.Address);
+            }
 
         }
 
@@ -57,12 +62,10 @@ namespace bai10
                 return salary; 
             }
 
-            //ghi đè void Display() từ class Person
-            public override void Display()
+           
+            public void DisplayEmployee(string title)
             {
-                Console.WriteLine("=========Thong tin nhan vien=========");
-                Console.WriteLine("Ho va ten: " + this.Name);
-                Console.WriteLine("Dia chi: " + this.Address);
+                base.Display(title);
                 Console.WriteLine("Luong: " + this.salary + " VND");
             }
 
@@ -86,12 +89,10 @@ namespace bai10
                 return balance;
             }
 
-            //ghi đè void Display() từ class Person
-            public override void Display()
+            
+            public void DisplayCustomer(string title)
             {
-                Console.WriteLine("=========Thong tin khach hang=========");
-                Console.WriteLine("Ho va ten: " + this.Name);
-                Console.WriteLine("Dia chi: " + this.Address);
+                base.Display(title);
                 Console.WriteLine("So du TK: " + this.balance + " VND");
             }
 
@@ -102,8 +103,8 @@ namespace bai10
             Employee employee = new Employee("Doan Van Thanh", "Ha Noi", 21000000);
             Customer customer = new Customer("Hoang Quang Thinh", "Quang Ninh", 35000000);
 
-            employee.Display();
-            customer.Display();
+            employee.DisplayEmployee("nhan vien");
+            customer.DisplayCustomer("khach hang");
 
             Console.ReadKey();
         }

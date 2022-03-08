@@ -6,7 +6,7 @@ namespace bai08
 {
     internal class bai08
     {
-        abstract class Person
+        class Person
         {
             public string Name;
             public int Age;
@@ -48,7 +48,14 @@ namespace bai08
 
             //khoi tao phuong thuc display() dang truu tuong (abstract)
             //co the su dung dang virtual deu duoc neu khong nhat thiet phai ghi de display()
-            public abstract void display();
+            //update: da duoc khai sang ve override nen se han che dung
+            public void display(string title)
+            {
+                Console.WriteLine("=========Thong tin " + title + "=========");
+                Console.WriteLine("Ho va ten: " + this.Name);
+                Console.WriteLine("Tuoi: " + this.Age);
+                Console.WriteLine("Dia chi: " + this.Address);
+            }
 
         }
 
@@ -69,12 +76,9 @@ namespace bai08
                 return gpa;
             }
 
-            public override void display()
+            public void displayStudent(string title)
             {
-                Console.WriteLine("=========Thong tin hoc sinh=========");
-                Console.WriteLine("Ho va ten: " + this.Name);
-                Console.WriteLine("Tuoi: " + this.Age);
-                Console.WriteLine("Dia chi: " + this.Address);
+                base.display(title);
                 Console.WriteLine("Diem trung binh: " + this.gpa);
                 
             }
@@ -98,23 +102,21 @@ namespace bai08
                 return salary;
             }
 
-            public override void display()
+            public void displayTeacher(string title)
             {
-                Console.WriteLine("=========Thong tin giao vien=========");
-                Console.WriteLine("Ho va ten: " + this.Name);
-                Console.WriteLine("Tuoi: " + this.Age);
-                Console.WriteLine("Dia chi: " + this.Address);
+                base.display(title);
                 Console.WriteLine("Luong: " + this.salary + " VND");
             }
         }
 
         static void Main(string[] args)
         {
+            
             Student student = new Student("Le Quynh An", 16, "Ha Noi", 7.9);
             Teacher teacher = new Teacher("Nguyen Ba Phan", 35, "Hai Phong", 15000000);
 
-            student.display();
-            teacher.display();
+            student.displayStudent("hoc sinh");
+            teacher.displayTeacher("giao vien");
 
             Console.ReadKey();
 

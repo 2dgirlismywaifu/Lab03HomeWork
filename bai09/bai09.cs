@@ -34,10 +34,13 @@ namespace bai09
                 return salary;
             }
 
-            //dung abstract hoac virtual deu duoc
-            public virtual void display()
+            
+            public void display(string title)
             {
-                Console.WriteLine("Day la noi hien thi thong tin nhan vien");
+                Console.WriteLine("=======Thong tin nhan vien chuc " + title + "=======");
+                Console.WriteLine("Ho va ten: " + this.Name);
+                Console.WriteLine("Luong co ban: " + this.salary + " VND");
+                
             }
 
         }
@@ -69,12 +72,10 @@ namespace bai09
             }
 
             //ghi de void display()
-            public override void display()
+            public  void displayManager(string title)
             {
-                //base.display(); //dựa nguyên gốc virtual void display()
-                Console.WriteLine("=======Thong tin nhan vien chuc quan ly=======");
-                Console.WriteLine("Ho va ten: " + this.Name);
-                Console.WriteLine("Luong co ban: " + this.salary + " VND");
+                base.display(title); //dựa nguyên gốc void display()
+                
                 Console.WriteLine("Thưởng thêm: " + this.bonus + " VND");
                 Console.WriteLine("Tong: " + getSalary() + " VND");
             }
@@ -86,9 +87,9 @@ namespace bai09
             Manager manager = new Manager("Nguyen Van A", 20000000, 3000000);
             Manager manager1 = new Manager("Nguyen Van B", 10000000, 2000000);
             Manager manager2 = new Manager("Nguyen Van C", 40000000, 3000000);
-            manager.display();
-            manager1.display();
-            manager2.display();
+            manager.displayManager("quan ly");
+            manager1.displayManager("quan ly");
+            manager2.displayManager("quan ly");
 
             Console.ReadKey();
         }
