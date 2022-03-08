@@ -33,15 +33,16 @@ namespace bai07
             public string lastName;
             public int salary;
 
-            public Employee(int Id, string firstName, string lastName, int salary)
-            {
-                this.Id = Id;
-                this.firstName = firstName;
-                this.lastName = lastName;
-                this.salary = salary;
-            }
+            //public Employee(int Id, string firstName, string lastName, int salary)
+            //{
+            //    this.Id = Id;
+            //    this.firstName = firstName;
+            //    this.lastName = lastName;
+            //    this.salary = salary;
+            //}
 
-            //vai dong tam su: vc, sao set/get lam the
+            public Employee() { }
+            
             public void setId (int Id)
             {
                 setId (Id);
@@ -82,13 +83,18 @@ namespace bai07
             {
                 return getFirstName() + " " +getLastName();
             }
-        }
 
-        class Result : Employee
-        {
-            public Result(int Id, string firstName, string lastName, int salary) : base(Id, firstName, lastName, salary)
+            public void inputInfo()
             {
-
+                Console.WriteLine("======Nhap thong tin nhan vien======");
+                Console.Write("Ma nhan vien: ");
+                Id = int.Parse(Console.ReadLine());
+                Console.Write("Ho: ");
+                firstName = Console.ReadLine();
+                Console.Write("Ten: ");
+                lastName = Console.ReadLine();
+                Console.WriteLine("Luong: ");
+                salary = int.Parse(Console.ReadLine());
             }
 
             public void display()
@@ -100,10 +106,13 @@ namespace bai07
             }
         }
 
+       
+
         static void Main(string[] args)
         {
-            Result result = new Result(0124, "Nguyen Van", "Tiep", 20000000);
-            result.display();
+            Employee employee = new Employee();
+            employee.inputInfo();
+            employee.display();
 
             Console.ReadKey();
         }
