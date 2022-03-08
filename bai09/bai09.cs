@@ -1,12 +1,11 @@
 ﻿using System;
 
-//Bài 9: Đề dài lắm, lười viết comment vào đây 
 
 namespace bai09
 {
     internal class bai09
     {
-        abstract class Employee
+        class Employee
         {
             public string Name; //tên nhân viên
             public int salary; //lương nhân viên
@@ -66,7 +65,6 @@ namespace bai09
 
             public override int getSalary()
             {
-                //return base.getSalary(); //dựa theo gốc getSalary từ class Employee
                 return this.salary + this.bonus;
             }
 
@@ -85,8 +83,12 @@ namespace bai09
 
         static void Main(string[] args)
         {
-            Manager manager = new Manager("Nguyen Van B", 20000000, 3000000);
+            Manager manager = new Manager("Nguyen Van A", 20000000, 3000000);
+            Manager manager1 = new Manager("Nguyen Van B", 10000000, 2000000);
+            Manager manager2 = new Manager("Nguyen Van C", 40000000, 3000000);
             manager.display();
+            manager1.display();
+            manager2.display();
 
             Console.ReadKey();
         }

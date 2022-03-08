@@ -69,25 +69,46 @@ namespace bai02
             public void result()
             {
                 float x1, x2; //hai nghiem cua phuong trinh
-               
-                if (delta() > 0)
+                if (a == 0)
                 {
-                    Console.WriteLine("Phuong trinh co 2 nghiem phan biet");
-                    x1 = (float)((-b + Math.Sqrt(delta())) / (2 * a));
-                    x2 = (float)((-b - Math.Sqrt(delta())) / (2 * a));
-                    Console.WriteLine("x1 = " + x1);
-                    Console.WriteLine("x2 = " + x2);
-                }
-                else if (delta() == 0)
-                {
-                    x1 = -(b / a);
-                    Console.WriteLine("Phuong trinh co 2 nghiem kep");
-                    Console.WriteLine("x1 = x2 = " + x1);
+                    if (b == 0)
+                    {
+                        if (c == 0)
+                        {
+                            Console.WriteLine("Phuong trinh vo so nghiem");
+                        }
+                        else
+                        {
+                            Console.WriteLine("Phuong trinh vo nghiem");
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine("Phuong trinh co 1 nghiem: x = {0}", (-c / b));
+                    }
                 }
                 else
                 {
-                    Console.WriteLine("Phuong trinh vo nghiem");
+                    if (delta() > 0)
+                    {
+                        Console.WriteLine("Phuong trinh co 2 nghiem phan biet");
+                        x1 = (float)((-b + Math.Sqrt(delta())) / (2 * a));
+                        x2 = (float)((-b - Math.Sqrt(delta())) / (2 * a));
+                        Console.WriteLine("x1 = " + x1);
+                        Console.WriteLine("x2 = " + x2);
+                    }
+                    else if (delta() == 0)
+                    {
+                        x1 = -(b / a);
+                        Console.WriteLine("Phuong trinh co 2 nghiem kep");
+                        Console.WriteLine("x1 = x2 = " + x1);
+                    }
+                    else
+                    {
+                        Console.WriteLine("Phuong trinh vo nghiem");
+                    }
                 }
+                
             }
         }
         static void Main(string[] args)

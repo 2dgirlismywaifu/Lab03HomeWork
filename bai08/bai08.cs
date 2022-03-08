@@ -54,7 +54,7 @@ namespace bai08
 
         class Student : Person
         {
-            public double gpa; //diem trung binh ?????
+            public double gpa; 
             public Student(string Name, int Age, string Address, double gpa) : base(Name, Age, Address)
             {
                 this.gpa = gpa;

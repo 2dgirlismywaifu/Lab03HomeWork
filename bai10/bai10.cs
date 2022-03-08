@@ -1,7 +1,7 @@
 ﻿using System;
 
 
-//Bài 10: Đề cũng dài quá, không comment đề nữa
+
 
 namespace bai10
 {
