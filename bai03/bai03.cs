@@ -9,8 +9,8 @@ namespace bai03
 {
     internal class bai03
     {
-        //khai bao abstract class Animal
-        abstract class Animal
+        //khai bao class Animal
+        class Animal
         {
             public virtual void eat()
             {

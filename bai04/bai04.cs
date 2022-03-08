@@ -28,8 +28,7 @@ namespace bai04
 
             public Student()
             {
-                Name = "";
-                age = 0;
+                
             }
 
             public void getInformation()

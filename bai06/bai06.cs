@@ -21,7 +21,12 @@ namespace bai06
         class Circle
         {
             public double radius { get; set; } //ban kinh hinh tron
-            
+
+        public Circle()
+            {
+                radius = 0;
+            }
+
             public Circle (double radius)
             {
                 this.radius = radius;
@@ -36,18 +41,6 @@ namespace bai06
             {
                 return radius * 2 * PI;
             }
-
-        }
-
-        class Result : Circle
-        {
-            
-
-            public Result(double radius) : base(radius)
-            {
-                
-            }
-
             public void display()
             {
                 Console.WriteLine("=======Thong tin hinh tron=======");
@@ -58,13 +51,14 @@ namespace bai06
 
         }
 
+        
+
         static void Main(string[] args)
         {
-            //co the khong can goi class circle
-            //vi class result ke thua lai class circle nen se ghi de radius
-            //Circle circle = new Circle(4); 
-            Result result = new Result(3);
-            result.display();
+            
+            Circle circle = new Circle(4); 
+            
+            circle.display();
 
             Console.ReadKey();
         }
